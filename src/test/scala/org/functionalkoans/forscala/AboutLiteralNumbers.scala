@@ -56,11 +56,11 @@ class AboutLiteralNumbers extends KoanSuite with ShouldMatchers {
     val h = 0.0
     val i = 9.23E-9D
 
-    a should be(3D)
-    b should be(3D)
+    a should be(3)
+    b should be(3)
     c should be(2.73D)
     d should be(3)
-    e should be(2.22)
+    e should be(3.22)
     f should be(93E-9)
     g should be(93e-9)
     h should be(0)
