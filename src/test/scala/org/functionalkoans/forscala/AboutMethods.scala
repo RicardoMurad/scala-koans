@@ -13,7 +13,7 @@ class AboutMethods extends KoanSuite {
     def add(x: Int, y: Int) = {
       x + y
     }
-    add(6, 7) should be(__)
+    add(6, 7) should be(13)
   }
 
   koan(
@@ -23,7 +23,7 @@ class AboutMethods extends KoanSuite {
       //Notice the :Int at the end of the method
       x + y
     }
-    add(2, 10) should be(__)
+    add(2, 10) should be(12)
   }
 
 
@@ -39,14 +39,14 @@ class AboutMethods extends KoanSuite {
       else x + y
     }
 
-    add(2, 10) should be(__)
-    add(1, 1) should be(__)
+    add(2, 10) should be(12)
+    add(1, 1) should be(2)
   }
 
 
   koan( """If a method does not of have equal it is considered `Unit` which is analogous to `void` in Java""") {
     def foo(x: Int) { //Note: No `=`
-      (x + 4) should be(__)
+      (x + 4) should be(9)
     }
     foo(5)
   }
@@ -55,14 +55,14 @@ class AboutMethods extends KoanSuite {
     """If you want to have an = on the method, while still explicitly returning Unit you can make the return type `Unit`,
       | this also analogous to `void""") {
     def foo(x: Int): Unit = { //Note we are declaring Unit
-      (x + 4) should be(__)
+      (x + 4) should be(7)
     }
     foo(3)
   }
 
   koan( """Once you have an =, it is understood that there will be a return type and can be inferred""") {
     def foo(x: Int) = 3 + 4
-    foo(3).isInstanceOf[Int] should be(__) //.isInstanceOf[...] is analogous to Java's instanceOf
+    foo(3).isInstanceOf[Int] should be(true) //.isInstanceOf[...] is analogous to Java's instanceOf
   }
 
   koan( """Of course if you wish to be explicit about the return type, you can attach it at the end of the method""") {
