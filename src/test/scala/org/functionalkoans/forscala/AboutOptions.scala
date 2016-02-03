@@ -6,10 +6,10 @@ class AboutOptions extends KoanSuite {
 
   koan("Option can have one of two values - Some or None") {
     val someValue: Option[String] = Some("I am wrapped in something")
-    someValue.get should be(__)
+    someValue.get should be("I am wrapped in something")
 
     val nullValue: Option[String] = None
-    nullValue should be(__)
+    nullValue should be(None)
   }
 
   def maybeItWillReturnSomething(flag: Boolean): Option[String] = {
