@@ -40,10 +40,10 @@ class AboutObjects extends KoanSuite {
       def magyar = "Szia"
     }
 
-    Greeting.english should be(__)
-    Greeting.espanol should be(__)
-    Greeting.deutsch should be(__)
-    Greeting.magyar should be(__)
+    Greeting.english should be("Hi")
+    Greeting.espanol should be("Hola")
+    Greeting.deutsch should be("Hallo")
+    Greeting.magyar should be("Szia")
   }
 
   koan( """Here is proof an object is a singleton, and not a static method in a class""") {
@@ -60,11 +60,11 @@ class AboutObjects extends KoanSuite {
     val x = Greeting
     val y = x
 
-    x eq y should be(__) //Reminder, eq checks for reference
+    x eq y should be(true) //Reminder, eq checks for reference
 
     val z = Greeting
 
-    x eq z should be(__)
+    x eq z should be(true)
   }
 
 
